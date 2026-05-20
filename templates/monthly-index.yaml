@@ -1,0 +1,64 @@
+schema_version: "<SCHEMA_VERSION>"
+month: "<YYYY-MM>"
+
+index_metadata:
+  index_id: "<MONTHLY_INDEX_ID>"
+  generated_at_utc: "<GENERATED_AT_UTC>"
+  generated_by_role: "<GENERATED_BY_ROLE>"
+  description: "<SAFE_INDEX_DESCRIPTION>"
+
+archive_sets:
+  - batch_id: "<ARCHIVE_BATCH_ID>"
+    cursor_start: "<START_CURSOR>"
+    cursor_end: "<END_CURSOR>"
+    manifest_ref: "<MANIFEST_PLACEHOLDER_REF>"
+    encrypted_archive_ref: "<ENCRYPTED_ARCHIVE_PLACEHOLDER_REF>"
+    verification_status: "<VERIFICATION_STATUS>"
+    review_status: "<REVIEW_STATUS>"
+
+cursor_coverage:
+  first_cursor: "<FIRST_CURSOR>"
+  last_cursor: "<LAST_CURSOR>"
+  gaps_detected: "<YES_OR_NO>"
+  overlaps_detected: "<YES_OR_NO>"
+  gap_refs: []
+  overlap_refs: []
+
+integrity_summary:
+  all_manifests_present: "<YES_OR_NO>"
+  all_hashes_verified: "<YES_OR_NO>"
+  failed_batches: []
+  pending_batches: []
+
+review_summary:
+  review_cursor_before: "<REVIEW_CURSOR_BEFORE>"
+  review_cursor_after: "<REVIEW_CURSOR_AFTER>"
+  reviewed_batches: []
+  pending_review_batches: []
+  anomaly_refs: []
+
+recovery_checkpoint:
+  checkpoint_cursor_before: "<CHECKPOINT_CURSOR_BEFORE>"
+  checkpoint_cursor_after: "<CHECKPOINT_CURSOR_AFTER>"
+  checkpoint_status: "<CHECKPOINT_STATUS>"
+  linked_recovery_state_ref: "<RECOVERY_STATE_PLACEHOLDER_REF>"
+
+approval_gates:
+  index_generation_approved: "<YES_OR_NO>"
+  validation_approved: "<YES_OR_NO>"
+  commit_approved: "<YES_OR_NO>"
+  cursor_advance_approved: "<YES_OR_NO>"
+
+safety:
+  metadata_only_index: true
+  contains_raw_transcript: false
+  contains_message_plaintext: false
+  contains_database_plaintext: false
+  contains_secret_material: false
+  contains_private_key_material: false
+  contains_decrypted_content: false
+  contains_private_metadata: false
+  placeholder_style: "<ANGLE_BRACKET_PLACEHOLDERS_ONLY>"
+
+notes:
+  safe_notes_only: "<SAFE_NOTES_ONLY>"

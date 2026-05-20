@@ -1,0 +1,64 @@
+schema_version: "<SCHEMA_VERSION>"
+
+archive_batch:
+  batch_id: "<ARCHIVE_BATCH_ID>"
+  created_at_utc: "<CREATED_AT_UTC>"
+  created_by_role: "<CREATED_BY_ROLE>"
+  description: "<SAFE_BATCH_DESCRIPTION>"
+
+source_scope:
+  source_type: "<SOURCE_TYPE>"
+  source_label: "<GENERIC_SOURCE_LABEL>"
+  scope_id: "<SCOPE_ID>"
+  metadata_only_scope_description: "<METADATA_ONLY_SCOPE_DESCRIPTION>"
+
+cursor_range:
+  previous_cursor: "<PREVIOUS_CURSOR>"
+  start_cursor: "<START_CURSOR>"
+  end_cursor: "<END_CURSOR>"
+  cursor_semantics: "<CURSOR_SEMANTICS>"
+
+artifacts:
+  encrypted_archive_ref: "<ENCRYPTED_ARCHIVE_PLACEHOLDER_REF>"
+  manifest_ref: "<MANIFEST_PLACEHOLDER_REF>"
+  chunk_count: "<CHUNK_COUNT>"
+  compression_method: "<COMPRESSION_METHOD>"
+  encryption_method: "<ENCRYPTION_METHOD>"
+
+integrity:
+  archive_sha256: "<ARCHIVE_SHA256_PLACEHOLDER>"
+  manifest_sha256: "<MANIFEST_SHA256_PLACEHOLDER>"
+  verification_status: "<VERIFICATION_STATUS>"
+  verified_at_utc: "<VERIFIED_AT_UTC>"
+
+approval_gates:
+  scope_approved: "<YES_OR_NO>"
+  archive_creation_approved: "<YES_OR_NO>"
+  validation_approved: "<YES_OR_NO>"
+  commit_approved: "<YES_OR_NO>"
+  cursor_advance_approved: "<YES_OR_NO>"
+
+safety:
+  metadata_only_manifest: true
+  contains_raw_transcript: false
+  contains_message_plaintext: false
+  contains_database_plaintext: false
+  contains_secret_material: false
+  contains_private_key_material: false
+  contains_decrypted_content: false
+  contains_private_metadata: false
+  placeholder_style: "<ANGLE_BRACKET_PLACEHOLDERS_ONLY>"
+
+review_linkage:
+  review_status: "<REVIEW_STATUS>"
+  review_scope_id: "<REVIEW_SCOPE_ID>"
+  review_cursor_before: "<REVIEW_CURSOR_BEFORE>"
+  review_cursor_after: "<REVIEW_CURSOR_AFTER>"
+
+recovery_linkage:
+  checkpoint_cursor_before: "<CHECKPOINT_CURSOR_BEFORE>"
+  checkpoint_cursor_after: "<CHECKPOINT_CURSOR_AFTER>"
+  checkpoint_status: "<CHECKPOINT_STATUS>"
+
+notes:
+  safe_notes_only: "<SAFE_NOTES_ONLY>"

@@ -1,0 +1,27 @@
+version: 1
+updated_at: "<REVIEW_CURSOR_TIMESTAMP_UTC>"
+
+scope:
+  description: "High-signal review/audit cursor."
+  raw_transcripts_allowed: false
+  plaintext_secrets_allowed: false
+  archive_cursor_separate: true
+
+sessions:
+  last_scan_at: "<LAST_SCAN_AT_UTC>"
+  last_seen_session_id: null
+  last_seen_message_id: <REVIEW_CURSOR_ID>
+  last_seen_message_timestamp: <REVIEW_CURSOR_TIMESTAMP>
+  last_seen_updated_at: null
+
+review:
+  latest_reviewed_range: "<START_ID>-<END_ID>"
+  latest_reviewed_message_count: <MESSAGE_COUNT>
+  related_safe_summary_commit: "<SAFE_SUMMARY_POLICY_COMMIT_SHA>"
+
+safety:
+  raw_content_in_cursor: false
+  plaintext_secret_in_cursor: false
+  private_key_in_cursor: false
+  decrypted_content_in_cursor: false
+  archive_cursor_changed: false

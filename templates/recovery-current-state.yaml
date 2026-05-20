@@ -1,0 +1,36 @@
+version: 1
+updated_at: "<UPDATED_AT_UTC>"
+
+checkpoint:
+  checkpoint_id: <RECOVERY_CHECKPOINT_ID>
+  archive_cursor_message_id: <ARCHIVE_CURSOR_ID>
+  review_audit_cursor_message_id: <REVIEW_CURSOR_ID>
+  reviewed_range: "<START_ID>-<END_ID>"
+  message_count: <MESSAGE_COUNT>
+
+commits:
+  archive: "<ARCHIVE_COMMIT_SHA>"
+  archive_cursor: "<ARCHIVE_CURSOR_COMMIT_SHA>"
+  safe_summary_policy: "<SAFE_SUMMARY_POLICY_COMMIT_SHA>"
+  review_cursor: "<REVIEW_CURSOR_COMMIT_SHA>"
+  recovery: "<RECOVERY_COMMIT_SHA>"
+
+archive:
+  canonical_artifact_pattern: "archive/encrypted/YYYY/MM/hermes-incremental-archive-<START_ID>-<END_ID>-<RUN_TIMESTAMP>.tar.zst.age"
+  canonical_manifest_pattern: "archive/manifests/YYYY/MM/hermes-incremental-archive-<START_ID>-<END_ID>-<RUN_TIMESTAMP>.manifest.yaml"
+  canonical_index_pattern: "archive/indexes/YYYY/MM/YYYY-MM.index.yaml"
+
+cron:
+  dry_run_report_only: true
+  no_write: true
+  no_archive: true
+  no_decrypt: true
+  no_cursor_advance: true
+  no_commit_push: true
+
+safety:
+  raw_content_in_kit: false
+  secrets_in_kit: false
+  private_keys_in_kit: false
+  decrypted_archive_content_in_kit: false
+  private_identity_content_in_kit: false

@@ -1,0 +1,46 @@
+version: 1
+updated_at: "<UPDATED_AT_UTC>"
+
+scope:
+  description: "Encrypted archive coverage cursor."
+  raw_transcripts_allowed: false
+  plaintext_secrets_allowed: false
+  decrypted_content_allowed: false
+  review_cursor_separate: true
+
+archive_cursor:
+  last_archive_message_id: <ARCHIVE_CURSOR_ID>
+  previous_archive_message_id: <PREVIOUS_ARCHIVE_CURSOR_ID>
+  coverage_status: "encrypted_archive_committed_and_pushed"
+  coverage_mode: "contiguous_message_id_range"
+  latest_committed_range: "<START_ID>-<END_ID>"
+  latest_committed_message_count: <MESSAGE_COUNT>
+  latest_chunk_ranges:
+    - range: "<CHUNK_START_ID>-<CHUNK_END_ID>"
+      message_count: <CHUNK_MESSAGE_COUNT>
+
+latest_archive:
+  related_archive_commit: "<ARCHIVE_COMMIT_SHA>"
+  related_archive_commit_title: "archive: add encrypted backup for messages <START_ID>-<END_ID>"
+  index_path: "archive/indexes/YYYY/MM/YYYY-MM.index.yaml"
+  manifests:
+    - "archive/manifests/YYYY/MM/hermes-incremental-archive-<CHUNK_START_ID>-<CHUNK_END_ID>-<RUN_TIMESTAMP>.manifest.yaml"
+  artifacts:
+    - path: "archive/encrypted/YYYY/MM/hermes-incremental-archive-<CHUNK_START_ID>-<CHUNK_END_ID>-<RUN_TIMESTAMP>.tar.zst.age"
+      range: "<CHUNK_START_ID>-<CHUNK_END_ID>"
+      size_bytes: <ENCRYPTED_SIZE_BYTES>
+      sha256: "<ENCRYPTED_SHA256>"
+
+review_cursor:
+  unchanged_by_archive_cursor_update: true
+  current_review_message_id: <REVIEW_CURSOR_ID>
+  note: "Archive cursor advancement remains separate from review/audit cursor advancement."
+
+safety:
+  raw_content_in_cursor: false
+  plaintext_secret_in_cursor: false
+  private_key_in_cursor: false
+  decrypted_content_in_cursor: false
+  private_identity_read: false
+  archive_decrypted: false
+  review_cursor_changed: false
