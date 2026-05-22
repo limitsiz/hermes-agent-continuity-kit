@@ -14,6 +14,9 @@ A generic, shareable operating model for preserving assistant continuity without
 
 This shareable kit must not include private repo paths, real commit hashes, real message identifiers, real message ranges, real cron job identifiers, real database paths, platform exports, raw transcript text, decrypted archive content, or secrets.
 
+- No secrets, private keys, tokens, `.env` files, auth files, cookies, raw transcripts, Hermes session/database plaintext, or decrypted archive content.
+- Templates are placeholders only; instantiate them privately and never commit real operational state.
+
 Use placeholders such as `<CONFIG_REPO>`, `<ARCHIVE_CURSOR_ID>`, `<REVIEW_CURSOR_ID>`, `<ARCHIVE_COMMIT_SHA>`, `<CRON_JOB_ID>`, and `<HERMES_STATE_DB>`.
 
 ## Suggested adoption paths
@@ -50,3 +53,7 @@ If historical archives already exist, verify them by metadata only: encrypted ar
 - `templates/recovery-current-state.yaml`: recovery checkpoint state template.
 - `templates/archive-manifest.yaml`: archive batch manifest template.
 - `templates/monthly-index.yaml`: monthly archive index template.
+
+## License
+
+MIT License. See [LICENSE](LICENSE).
