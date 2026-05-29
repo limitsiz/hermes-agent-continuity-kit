@@ -37,3 +37,9 @@ Synthetic examples are allowed only when explicitly marked synthetic.
 ## Sibling repository boundary
 
 Sibling repositories or external config repos are out of scope by default. Treat them as read-only unless explicitly approved. Do not mix another project’s credentials, archives, recovery metadata, or private state into this Continuity Kit.
+
+## Approval Kernel hard stops
+
+Stop before any operation that would read or expose raw source content,
+decrypted archive content, secrets, private keys, real runtime state, remote
+visibility settings, cron/service changes, or non-allowlisted files.

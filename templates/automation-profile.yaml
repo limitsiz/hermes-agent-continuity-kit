@@ -1,0 +1,9 @@
+automation_profile:
+  name: "<report-only|docs-batch|safe-local-setup|archive-batch-local|maintainer-guarded>"
+  description: "<placeholder-description>"
+  allowed_operations: []
+  forbidden_operations: []
+  allowlisted_paths: []
+  hard_stops: []
+  required_validations: []
+  approval_receipt_required: true

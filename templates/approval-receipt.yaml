@@ -1,0 +1,19 @@
+approval_receipt:
+  profile: "<report-only|docs-batch|safe-local-setup|archive-batch-local|maintainer-guarded>"
+  scope: "<placeholder-scope>"
+  allowed_paths: []
+  forbidden_paths: []
+  files_changed: []
+  protected_files_changed: false
+  raw_content_printed: false
+  secret_or_token_printed: false
+  decrypted_content_printed: false
+  staged: false
+  committed: false
+  pushed: false
+  cursor_advanced: false
+  archive_created: false
+  validation:
+    status: "<placeholder-status>"
+    commands: []
+  next_required_approval: "<placeholder-next-approval>"

@@ -25,3 +25,8 @@ safety:
   private_key_in_cursor: false
   decrypted_content_in_cursor: false
   archive_cursor_changed: false
+
+ledger_component: "Audit Ledger"
+approval_profile_required_for_advancement: "maintainer-guarded"
+raw_content_reviewed: false
+approved_summary_writes_applied: false

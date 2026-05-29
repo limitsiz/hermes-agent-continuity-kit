@@ -44,3 +44,8 @@ safety:
   private_identity_read: false
   archive_decrypted: false
   review_cursor_changed: false
+
+pipeline_component: "Encrypted Archive Pipeline"
+approval_profile_required_for_advancement: "archive-batch-local"
+archive_artifacts_committed: "<placeholder-boolean>"
+archive_artifacts_pushed: "<placeholder-boolean>"

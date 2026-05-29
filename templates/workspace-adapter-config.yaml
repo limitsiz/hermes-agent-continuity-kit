@@ -1,0 +1,10 @@
+knowledge_workspace_adapter:
+  enabled: false
+  type: "<filesystem-markdown|docs-repo|local-wiki|obsidian-compatible>"
+  public_identity_dependency: false
+  raw_source_sync: false
+  approved_summary_only: true
+  root: "<placeholder-workspace-root>"
+  approval:
+    profile: "safe-local-setup"
+    receipt: "<placeholder-approval-receipt>"

@@ -3,7 +3,7 @@
 ## Purpose
 
 This document defines the safe packaging and release boundary for the Shareable
-HermesAgent Continuity Kit. It explains which generic documentation and template
+Hermes Agent Continuity Kit. It explains which generic documentation and template
 files may be exported, which private-state surfaces must be excluded, and which
 validation gates must pass before a package is copied to another repository,
 server, or installation.
@@ -311,3 +311,12 @@ This packaging boundary does not:
 - Authorize cursor movement.
 - Authorize archive production or archive decryption.
 - Authorize staging, commit, or push.
+
+## Automation-ready MVP package contents
+
+The package should include only public docs, placeholder-only templates,
+validation scripts when approved, and sanitized examples when approved. Exclude
+private runtime state, instantiated cursor files, raw content, decrypted
+artifacts, secrets, and environment-specific metadata.
+
+Recommended package name: `hermes-agent-continuity-kit`.

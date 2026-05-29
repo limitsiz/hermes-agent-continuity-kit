@@ -34,3 +34,7 @@ safety:
   private_keys_in_kit: false
   decrypted_archive_content_in_kit: false
   private_identity_content_in_kit: false
+
+canonical_template_name: "recovery-state.yaml"
+compatibility_name: "recovery-current-state.yaml"
+component: "Recovery Workbench"

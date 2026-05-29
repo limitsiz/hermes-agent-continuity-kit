@@ -40,3 +40,9 @@ A checkpoint does not mean:
 - Private keys are readable by the agent.
 - Archive and review cursors are the same concept.
 - Future cursor advancement can be automatic without gates.
+
+## Recovery Workbench
+
+Recovery checkpoints are managed by the Recovery Workbench and remain separate
+from review/audit follow-up and public release packaging. Public templates use
+placeholders only; real recovery state belongs in a private/local instance.

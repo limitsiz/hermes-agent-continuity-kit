@@ -1,0 +1,13 @@
+recovery_state:
+  version: 1
+  component: "Recovery Workbench"
+  state_id: "<placeholder-recovery-state-id>"
+  source_checkpoint: "<placeholder-checkpoint>"
+  public_private_boundary:
+    raw_content_included: false
+    decrypted_content_included: false
+    secret_or_token_included: false
+    private_runtime_state_included: false
+  approval:
+    profile: "maintainer-guarded"
+    receipt: "<placeholder-approval-receipt>"

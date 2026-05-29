@@ -62,3 +62,7 @@ safety:
 
 notes:
   safe_notes_only: "<SAFE_NOTES_ONLY>"
+
+pipeline_component: "Encrypted Archive Pipeline"
+audit_ledger_cursor_ref: "<placeholder-audit-ledger-cursor>"
+archive_cursor_ref: "<placeholder-archive-cursor>"

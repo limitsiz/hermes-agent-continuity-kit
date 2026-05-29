@@ -1,0 +1,13 @@
+audit_ledger_entry:
+  version: 1
+  component: "Audit Ledger"
+  source_metadata_only: true
+  range: "<placeholder-range>"
+  candidate_report_id: "<placeholder-candidate-report-id>"
+  approved_actions: []
+  no_action_reason: "<placeholder-or-null>"
+  cursor_advancement_allowed: false
+  public_private_boundary:
+    raw_content_included: false
+    decrypted_content_included: false
+    secret_or_token_included: false

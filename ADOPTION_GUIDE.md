@@ -1,6 +1,6 @@
 # Adoption Guide
 
-This guide explains how to copy and apply the Shareable HermesAgent Continuity
+This guide explains how to copy and apply the Shareable Hermes Agent Continuity
 Kit in another repository or installation without exposing private metadata,
 raw transcripts, decrypted archives, or secrets.
 
@@ -179,3 +179,17 @@ shareable material. Do not include their private paths, identifiers, internal
 configuration, secrets, raw content, or operational state. If an adoption needs a
 cross-repository recommendation, write it as generic policy and keep any
 installation-specific details in private state.
+
+## Canonical adoption profiles
+
+Use only the canonical approval profiles in public docs:
+
+- `report-only`
+- `docs-batch`
+- `safe-local-setup`
+- `archive-batch-local`
+- `maintainer-guarded`
+
+Stop immediately if adoption requires raw source content, decrypted archive
+content, private keys, real cursor/message identifiers, real archive paths, or
+private runtime state.

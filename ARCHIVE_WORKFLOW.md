@@ -58,3 +58,9 @@ Advance the archive cursor in a separate approval gate after archive commit/push
 ## Gate 6: Review workflow
 
 High-signal review and review cursor advancement remain separate gates.
+
+## Encrypted Archive Pipeline
+
+This workflow is the Encrypted Archive Pipeline. It tracks encrypted artifacts,
+metadata-only manifests, indexes, and archive cursor state separately from the
+Audit Ledger review cursor.
