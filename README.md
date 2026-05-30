@@ -161,3 +161,19 @@ Recommended MVP docs:
 - `CONVERSATION_SOURCE_POLICY.md`: safe source inventory policy.
 - `KNOWLEDGE_WORKSPACE_ADAPTER.md`: product-agnostic workspace adapter.
 - `OPTIONAL_CURATED_WIKI.md`: optional curated knowledge workspace model.
+
+
+## Installable runtime MVP
+
+The public repository now includes an installable runtime skeleton. From a fresh clone, run:
+
+```bash
+installer/install.sh --profile standard --target /tmp/hck-runtime --dry-run --non-interactive
+installer/install.sh --profile standard --target /tmp/hck-runtime --non-interactive
+/tmp/hck-runtime/bin/hck-validate-runtime
+/tmp/hck-runtime/bin/hck-memory-audit-dry-run
+/tmp/hck-runtime/bin/hck-archive-dry-run
+/tmp/hck-runtime/bin/hck-recovery-refresh
+```
+
+The runtime keeps scheduler templates disabled by default, keeps archive actions in dry-run mode, and keeps cursor advancement behind explicit approval.

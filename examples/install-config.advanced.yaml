@@ -1,0 +1,6 @@
+profile: advanced
+runtime_home: <HCK_RUNTIME_HOME>
+workspace_adapter: markdown
+knowledge_index: enabled
+archive_mode: dry-run
+memory_audit_mode: report-only

@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+set -eu
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+REPO_ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
+export HCK_HOME="${HCK_HOME:-$REPO_ROOT}"
+export PYTHONDONTWRITEBYTECODE=1
+exec python3 -B "$REPO_ROOT/runtime/continuity_engine.py" workspace_init "$@"

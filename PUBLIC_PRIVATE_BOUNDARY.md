@@ -70,3 +70,8 @@ placeholder or move it to Private State.
 Public kit material must not include private operator identity material,
 private team operating structures, peer-agent project details, real runtime
 paths, real cursor/message identifiers, or private archive metadata.
+
+
+## Runtime boundary
+
+The public runtime skeleton is safe scaffolding. Private state belongs only in a local target directory created by the installer and must not be copied back into the public repository.

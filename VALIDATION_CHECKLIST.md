@@ -117,3 +117,13 @@ Additional checks:
 - [ ] Hard stops are documented.
 - [ ] Approval receipt template exists.
 - [ ] Release Test Harness validation plan exists.
+
+
+## Runtime MVP validation
+
+- [ ] Installer dry-run succeeds.
+- [ ] Standard install creates the expected runtime skeleton.
+- [ ] Runtime validation passes.
+- [ ] Memory audit remains report-only.
+- [ ] Archive pipeline remains dry-run.
+- [ ] Recovery refresh does not decrypt.

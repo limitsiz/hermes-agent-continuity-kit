@@ -356,3 +356,8 @@ private runtime state, instantiated cursor files, raw content, decrypted
 artifacts, secrets, and environment-specific metadata.
 
 Recommended package name: `hermes-agent-continuity-kit`.
+
+
+## Runtime MVP package files
+
+The public release root layout includes installer, runtime, command, config, adapter, scheduler, and runtime documentation files as shareable scaffolding. These files are still placeholder-first and must not contain private state.

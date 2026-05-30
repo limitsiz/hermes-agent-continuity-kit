@@ -1,0 +1,7 @@
+[Unit]
+Description=Hermes Continuity archive dry-run timer example
+[Timer]
+OnCalendar=weekly
+Persistent=false
+[Install]
+WantedBy=timers.target

@@ -31,6 +31,13 @@ REQUIRED_DOCS = [
     "SERVER_REQUIREMENTS.md",
     "KNOWLEDGE_WORKSPACE_ADAPTER.md",
     "RELEASE_TEST_HARNESS.md",
+    "docs/runtime/INSTALLER.md",
+    "docs/runtime/RUNTIME_ARCHITECTURE.md",
+    "docs/runtime/CONFIGURATION.md",
+    "docs/runtime/OPERATIONS.md",
+    "docs/runtime/SCHEDULER.md",
+    "docs/runtime/KNOWLEDGE_INDEX.md",
+    "docs/runtime/CLEAN_SERVER_TEST.md",
 ]
 
 REQUIRED_TEMPLATES = [
@@ -44,6 +51,11 @@ REQUIRED_TEMPLATES = [
     "templates/audit-ledger-entry.yaml",
     "templates/recovery-state.yaml",
     "templates/workspace-adapter-config.yaml",
+    "templates/hermes-continuity-config.yaml",
+    "templates/install-receipt.yaml",
+    "templates/runtime-validation-report.yaml",
+    "templates/archive-dry-run-report.yaml",
+    "templates/memory-audit-report.yaml",
 ]
 
 PUBLIC_VOCABULARY = [
@@ -55,6 +67,8 @@ PUBLIC_VOCABULARY = [
     "Knowledge Workspace Adapter",
     "Approval Kernel",
     "Release Test Harness",
+    "Knowledge Index",
+    "Curated Wiki Adapter",
 ]
 
 APPROVAL_PROFILES = [
@@ -209,7 +223,7 @@ class Validator:
         self.set_check("repo_state")
 
     def check_inventory(self) -> None:
-        required_scripts = ["scripts/validate-public-readiness.sh", "scripts/validate_public_readiness.py"]
+        required_scripts = ["scripts/validate-public-readiness.sh", "scripts/validate_public_readiness.py", "installer/install.sh", "installer/hermes_continuity_installer.py", "scripts/hck-install", "scripts/hck-validate-runtime", "scripts/hck-continuity-check", "scripts/hck-memory-audit-dry-run", "scripts/hck-archive-dry-run", "scripts/hck-recovery-refresh", "scripts/hck-workspace-init", "scripts/hck-index-rebuild"]
         for relpath in REQUIRED_DOCS + REQUIRED_TEMPLATES + required_scripts:
             if not (self.docs_root / relpath).is_file():
                 self.add("error", "inventory", self.display_path(relpath), "Required public file is missing.")

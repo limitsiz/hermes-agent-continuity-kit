@@ -32,3 +32,8 @@ creation, recovery refresh, service/cron changes, or remote visibility changes.
 
 Each run produces an approval receipt listing the active profile, scope, changed
 files, validation status, safety booleans, and next required approval.
+
+
+## Runtime automation defaults
+
+The installable runtime MVP may create local placeholder directories and command wrappers. It must not enable cron or systemd production timers during default installation.

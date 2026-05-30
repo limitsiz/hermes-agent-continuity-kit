@@ -1,0 +1,7 @@
+[Unit]
+Description=Hermes Continuity report-only audit timer example
+[Timer]
+OnCalendar=daily
+Persistent=false
+[Install]
+WantedBy=timers.target

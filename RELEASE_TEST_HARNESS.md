@@ -135,3 +135,8 @@ Stop and fail if the validator detects actual private/runtime material, dangerou
 ## Approval receipt integration
 
 Release validation reports should include whether files changed, whether protected files changed, whether raw/secret/decrypted content was printed, whether staging/commit/push occurred, whether cursor/archive work occurred, and the next required approval gate.
+
+
+## Runtime smoke commands
+
+Clean-server runtime smoke validation may run the installer in dry-run mode, then install into a disposable target and execute `bin/hck-validate-runtime`. Scheduler examples must remain disabled unless separately approved.

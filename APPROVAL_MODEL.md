@@ -25,3 +25,8 @@ A docs update does not authorize staging. A staging approval does not authorize 
 commit. A commit approval does not authorize a push. A push approval does not
 authorize public visibility changes, cursor movement, archive decrypt/restore,
 cron changes, or recovery refresh.
+
+
+## Runtime approval boundary
+
+Runtime commands inherit the Approval Kernel boundary: archive production, cursor advancement, decrypt operations, and scheduler enablement are not default install actions and require separate approval.

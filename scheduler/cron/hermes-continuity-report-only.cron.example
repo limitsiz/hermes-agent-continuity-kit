@@ -1,0 +1,2 @@
+# Example only. Do not install automatically.
+# 0 8 * * * <HCK_RUNTIME_HOME>/bin/hck-memory-audit-dry-run

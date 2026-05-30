@@ -1,0 +1,5 @@
+[Unit]
+Description=Hermes Continuity archive dry-run example
+[Service]
+Type=oneshot
+ExecStart=<HCK_RUNTIME_HOME>/bin/hck-archive-dry-run

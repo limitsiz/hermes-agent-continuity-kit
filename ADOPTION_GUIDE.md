@@ -193,3 +193,8 @@ Use only the canonical approval profiles in public docs:
 Stop immediately if adoption requires raw source content, decrypted archive
 content, private keys, real cursor/message identifiers, real archive paths, or
 private runtime state.
+
+
+## Runtime adoption path
+
+Use `installer/install.sh` for a local runtime skeleton, validate it with `bin/hck-validate-runtime`, then keep memory audit report-only and archive actions dry-run until a separate approval changes the operating mode.

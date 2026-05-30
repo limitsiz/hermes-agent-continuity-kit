@@ -27,5 +27,4 @@ if [ -z "$repo_root" ]; then
   args=("--repo-root" "$repo_root" "${args[@]}")
 fi
 
-export PYTHONDONTWRITEBYTECODE=1
-exec python3 -B "$script_dir/validate_public_readiness.py" "${args[@]}"
+exec python3 "$script_dir/validate_public_readiness.py" "${args[@]}"
