@@ -20,7 +20,12 @@ The harness does not:
 
 ## Safety model
 
-The validator only inspects the public documentation and template surface under `docs/continuity-kit/`. It reports sanitized findings with check names, file paths, and short summaries. It must not print raw, secret, decrypted, or private runtime values.
+The validator inspects only the public documentation, template, and validation
+surface. In the private/source repository this surface may live under
+`docs/continuity-kit/`; in the public release repository it uses the root layout
+(`README.md`, `scripts/`, `templates/`, and sibling public docs). It reports
+sanitized findings with check names, file paths, and short summaries. It must not
+print raw, secret, decrypted, or private runtime values.
 
 Policy examples may mention forbidden classes such as environment files, cookies, passwords, raw transcripts, decrypted archives, or private keys. Those terms are allowed when used as safety rules. Actual assignments, key blocks, private paths, raw payloads, decrypted content, or runtime identifiers are failures.
 
@@ -45,18 +50,21 @@ The harness checks:
 
 ## Commands
 
+For the public release repository root layout, run:
+
 ```bash
-docs/continuity-kit/scripts/validate-public-readiness.sh
+scripts/validate-public-readiness.sh --repo-root . --strict-release
 
-docs/continuity-kit/scripts/validate-public-readiness.sh --repo-root .
+scripts/validate-public-readiness.sh --repo-root . --strict-release --format json
 
-docs/continuity-kit/scripts/validate-public-readiness.sh --strict-release
+python3 scripts/validate_public_readiness.py --repo-root . --strict-release
+```
 
-docs/continuity-kit/scripts/validate-public-readiness.sh --clean-server-rc1
+For a private/source repository that keeps the kit under `docs/continuity-kit/`,
+use the same arguments with the source-layout script path, for example:
 
-docs/continuity-kit/scripts/validate-public-readiness.sh --format json
-
-python3 docs/continuity-kit/scripts/validate_public_readiness.py --repo-root . --strict-release
+```bash
+docs/continuity-kit/scripts/validate-public-readiness.sh --repo-root . --strict-release
 ```
 
 ## Output format

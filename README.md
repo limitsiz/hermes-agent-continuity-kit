@@ -94,6 +94,24 @@ For step-by-step adoption into another repository or installation, see
 `ADOPTION_GUIDE.md`. Keep this directory shareable-only: replace placeholders
 only inside private/local instantiated copies, never in public templates.
 
+## Public release quickstart
+
+Clone the public release repository with unauthenticated HTTPS and validate the
+root-layout public package before adapting it:
+
+```bash
+git clone https://github.com/limitsiz/hermes-agent-continuity-kit.git
+cd hermes-agent-continuity-kit
+
+scripts/validate-public-readiness.sh --repo-root . --strict-release
+scripts/validate-public-readiness.sh --repo-root . --strict-release --format json
+```
+
+The current public release commit passed public HTTPS clean clone RC1 validation.
+Version tags and GitHub Releases may be added later as optional future versioning
+work; their absence is not a blocker for the current public RC1 release-ready
+state.
+
 ### Fresh install
 
 Start with empty cursor templates, choose a private archive recipient in a

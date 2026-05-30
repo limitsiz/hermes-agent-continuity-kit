@@ -20,11 +20,16 @@ primary selection mechanism.
 
 Default decision:
 
-- Keep the kit as ordinary repository files under `docs/continuity-kit/`.
+- Keep the private/source repository layout and public release repository layout
+  explicit:
+  - **Source layout:** `docs/continuity-kit/<relative_path>` inside the private
+    source-of-truth repository.
+  - **Public release root layout:** `<relative_path>` at the root of the public
+    distribution repository, with `scripts/` and `templates/` as root children.
 - Do not create a zip or tar artifact by default.
 - Use dry-run package listing and validation before any future artifact creation.
-- Require a separate approval for any real export artifact, checksum file, or
-  release manifest.
+- Require a separate approval for any real export artifact, checksum file, tag,
+  GitHub Release, or release manifest.
 
 ## Shareable package scope
 
@@ -52,29 +57,57 @@ Disallowed content categories:
 
 ## Include allowlist
 
-Only these shareable files are eligible for a package:
+Only these shareable public release root-layout files are eligible for the public
+distribution repository:
 
 ```text
-docs/continuity-kit/ADOPTION_GUIDE.md
-docs/continuity-kit/ARCHITECTURE.md
-docs/continuity-kit/ARCHIVE_WORKFLOW.md
-docs/continuity-kit/CRON_DRY_RUNS.md
-docs/continuity-kit/CURSOR_MODEL.md
-docs/continuity-kit/PACKAGING.md
-docs/continuity-kit/README.md
-docs/continuity-kit/RECOVERY_CHECKPOINTS.md
-docs/continuity-kit/REVIEW_WORKFLOW.md
-docs/continuity-kit/SAFETY_BOUNDARIES.md
-docs/continuity-kit/VALIDATION_CHECKLIST.md
-docs/continuity-kit/templates/archive-manifest.yaml
-docs/continuity-kit/templates/last_archive_cursor.yaml
-docs/continuity-kit/templates/last_scan_cursor.yaml
-docs/continuity-kit/templates/monthly-index.yaml
-docs/continuity-kit/templates/recovery-current-state.yaml
+ADOPTION_GUIDE.md
+APPROVAL_MODEL.md
+ARCHITECTURE.md
+ARCHIVE_WORKFLOW.md
+AUTOMATION_POLICY.md
+BOOTSTRAP_RUNBOOK.md
+CONVERSATION_SOURCE_POLICY.md
+CRON_DRY_RUNS.md
+CURSOR_MODEL.md
+CURSOR_RECONCILIATION.md
+INSTALL_PROFILES.md
+KNOWLEDGE_WORKSPACE_ADAPTER.md
+MEMORY_AUDIT_WORKFLOW.md
+MEMORY_ROUTING_POLICY.md
+MEMORY_WRITE_POLICY.md
+OPTIONAL_CURATED_WIKI.md
+PACKAGING.md
+PUBLIC_PRIVATE_BOUNDARY.md
+README.md
+RECOVERY_CHECKPOINTS.md
+RELEASE_TEST_HARNESS.md
+REVIEW_WORKFLOW.md
+SAFETY_BOUNDARIES.md
+SAFE_SUMMARY_SURFACES.md
+SERVER_REQUIREMENTS.md
+VALIDATION_CHECKLIST.md
+scripts/validate-public-readiness.sh
+scripts/validate_public_readiness.py
+templates/approval-receipt.yaml
+templates/archive-manifest.yaml
+templates/audit-ledger-entry.yaml
+templates/automation-profile.yaml
+templates/last_archive_cursor.yaml
+templates/last_scan_cursor.yaml
+templates/monthly-index.yaml
+templates/recovery-current-state.yaml
+templates/recovery-state.yaml
+templates/workspace-adapter-config.yaml
 ```
 
-If this list changes, update the package validation checklist and re-run scoped
-pre-release validation before staging or publishing the change.
+`LICENSE` is a required public release repository root file and must be preserved,
+but it is treated as release metadata rather than a kit template or workflow file.
+
+When translating from the private/source layout, map
+`docs/continuity-kit/<relative_path>` to `<relative_path>` in the public release
+root layout. If this list changes, update the package validation checklist and
+re-run scoped pre-release validation before staging or publishing the change.
 
 ## Exclude denylist
 
@@ -146,10 +179,11 @@ Placeholder rules:
 - Redaction is not a substitute for exclusion; private content should not enter
   the package candidate at all.
 
-## Optional package layout
+## Optional package artifact layout
 
-If a future approval authorizes a package artifact, the recommended internal
-layout is:
+The public release repository itself uses the root layout described above. If a
+future approval authorizes a separate zip or tar package artifact, the
+recommended internal artifact layout is:
 
 ```text
 continuity-kit/
@@ -172,8 +206,9 @@ continuity-kit/
     recovery-current-state.yaml
 ```
 
-The package root should not contain repository-private state directories or
-installation-specific files.
+The artifact package root should not contain repository-private state directories
+or installation-specific files. Creating a package artifact, tag, or GitHub
+Release is optional future versioning work and requires a separate approval.
 
 ## Optional manifest model
 
@@ -181,7 +216,8 @@ A future release manifest may be generated only after separate approval. If used
 it should contain generic package metadata and file inventory only:
 
 ```yaml
-package_name: hermesagent-continuity-kit
+package_name: hermes-agent-continuity-kit
+display_name: Hermes Agent Continuity Kit
 package_version: <PACKAGE_VERSION>
 created_at: <PACKAGE_CREATED_AT>
 expected_file_count: <EXPECTED_FILE_COUNT>
